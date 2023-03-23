@@ -1,0 +1,208 @@
+
+<html>
+  <head>
+    <title>Real Time Image Identification App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+  <center>
+        <p>CASE STUDY Mobilenet Azure AND Mobilenet Model</p>
+        <span class="google_lens">Mobilenet Azure <img src="https://www.bing.com/th?id=Ad4c93f2425bde88c5133a1081ee67f19&w=110&h=110&c=7&rs=1&qlt=80&o=6&dpr=1.5&pid=SANGAM"></span>
+        <p>VS</p>
+        <p class="btn btn-primary" id="mobilenet">Mobilenet Model</p>
+        <hr>
+        <ol>
+          <div class="test_image_and_result1 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white1">Test Image - </b>
+              <img class="img" src="headphone.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> Wall </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span> A close up of a blue wall </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Mobilenet Model is more accurate</h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result2 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white2">Test Image - </b>
+              <img class="img" src="hi.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> A room </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span>A living room </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Mobilenet Model is more accurate </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result3 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white3">Test Image - </b>
+              <img class="img" src="men shirt.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> A man </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span> A man in a blue shirt </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Mobilenet Model is more accurate </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result4 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white4">Test Image - </b>
+              <img class="img" src="moon blanket.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> A Cake</span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span>a piece of cake </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Mobilenet Azure is more accurat </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result5 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white5">Test Image - </b>
+              <img class="img" src="pencil.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> A paper</span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span> A pencil and paper </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Mobilenet Model is more accurate </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result6 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white6">Test Image - </b>
+              <img class="img" src="pumpkin.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> Orange </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span> undefined </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Mobilenet Azure is more accurate </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result7 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white7">Test Image - </b>
+              <img class="img" src="radio.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> A close up of games </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span> A close up of electronics </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result -Mobilenet Model is more accurate </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result8 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white8">Test Image - </b>
+              <img class="img" src="shoe.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> A close up shoes</span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span> A close up of a footwear</span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Mobilenet Model is more accurate </h4>
+              <hr>
+              <h4> </h4>
+            </div>
+          </div>
+          <div class="test_image_and_result9 col-xs-12">
+            <li class="col-sm-4 col-xs-12">
+              <b class="white9">Test Image - </b>
+              <img class="img" src="tv.jfif">
+            </li>
+            <h5 class="first col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Azure</b> - 
+              <span> A radio </span>
+            </h5>
+            <h5 class="second col-sm-4 col-xs-12">
+              Output on <b>Mobilenet Model </b> - 
+              <span> undefined </span>
+            </h5>
+            <div class="mini_result" class="col-xs-12">
+              <h4>Result - Mobilenet Azure is more accurate</h4>
+              <br>
+              <br>
+              <br>
+              <br>
+              <hr>
+              <h4> I tested 9 images
+                Mobilenet Model has predicated 6 images correctly
+              And Mobilnet Azure has predicated 2 images correctly
+            So according to my case study Mobilenet Model is more accurate </h4>
+            </div>
+          </div>
+        </ol>
+      <p class="bottom">Developed by - Shreya Sahoo</p>
+  </center>
+  </body>
+</html>
